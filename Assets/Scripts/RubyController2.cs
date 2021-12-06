@@ -102,6 +102,7 @@ public class RubyController2 : MonoBehaviour
             Destroy(timerMode);
             cam.gameOver = true;
             gameOver.text = "You lose! \nPress R to restart";
+            Destroy(this.gameObject);
         }
     }
 
@@ -126,8 +127,8 @@ public class RubyController2 : MonoBehaviour
             speaker.Play();
             Destroy(timerMode);
             cam.gameOver = true;
-            speed = 0.0f;
             gameOver.text = "You win! \nGame made by Jim Elso\nPress R to restart, if you wish";
+            Destroy(this.gameObject);
         }
     }
 
