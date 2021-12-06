@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 327739241260043086}
   - component: {fileID: 6488928122523308765}
   - component: {fileID: 4399527437360332478}
+  - component: {fileID: 418775032682563089}
   m_Layer: 8
   m_Name: Ruby
   m_TagString: RubyController
@@ -101,12 +102,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   timeInvincible: 2
+  score: 0
+  scoreText: {fileID: 0}
+  cogText: {fileID: 0}
+  gameOver: {fileID: 0}
   projectilePrefab: {fileID: 4583988996977667552, guid: c3a73ebcbd7b5f34a92688384567768f,
     type: 3}
   hitPrefab: {fileID: 0}
   healthPrefab: {fileID: 0}
   maxHealth: 5
+  cogCount: 0
+  speaker: {fileID: 0}
   cogClip: {fileID: 8300000, guid: d97e543806f29a0458867f882a1e7bb9, type: 3}
+  bg: {fileID: 0}
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!50 &9001505288176100780
 Rigidbody2D:
   serializedVersion: 4
@@ -269,3 +279,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &418775032682563089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206822784480136102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fcae68796578e846bbfe90852023353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  timeInvincible: 2
+  score: 0
+  scoreText: {fileID: 0}
+  cogText: {fileID: 0}
+  gameOver: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
+  healthPrefab: {fileID: 0}
+  maxHealth: 5
+  cogCount: 0
+  speaker: {fileID: 0}
+  cogClip: {fileID: 0}
+  bg: {fileID: 0}
+  win: {fileID: 0}
+  lose: {fileID: 0}

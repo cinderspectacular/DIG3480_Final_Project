@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
+    public bool level2;
     public bool gameOver;
-    // Start is called before the first frame update
+    
     void Start()
     {
         gameOver = false;
@@ -24,7 +25,7 @@ public class CameraController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.R))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene("Main");
             }
         }
 

@@ -30,10 +30,6 @@ public class HardEnemyController : MonoBehaviour
             rubyController = rubyConObject.GetComponent<RubyController>();
             print("Found");
         }
-        else
-        {
-            print("Cannot find script");
-        }
     }
 
     void Update()

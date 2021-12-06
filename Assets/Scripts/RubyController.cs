@@ -24,6 +24,7 @@ public class RubyController : MonoBehaviour
 
     bool isInvincible;
     float invincibleTimer;
+    bool level2;
 
     public int maxHealth = 5;
     public int health { get { return currentHealth; } }
@@ -62,6 +63,8 @@ public class RubyController : MonoBehaviour
         speaker.clip = bg;
         speaker.loop = true;
         speaker.Play();
+
+        level2 = false;
     }
 
     public void PlaySound(AudioClip clip)
@@ -104,10 +107,18 @@ public class RubyController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rb2D.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
             if (hit.collider != null)
             {
-                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
-                if (character != null)
+                if(level2)
                 {
-                    character.DisplayDialog();
+                    this.gameObject.AddComponent<RubyController2>();
+                    SceneManager.LoadScene("Level2");
+                }
+                else
+                {
+                    NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+                    if (character != null)
+                    {
+                        character.DisplayDialog();
+                    }
                 }
             }
         }
@@ -158,12 +169,7 @@ public class RubyController : MonoBehaviour
         scoreText.text = "Robots Fixed: " + score;
         if (score > 3)
         {
-            cam.gameOver = true;
-            speaker.loop = false;
-            speaker.clip = win;
-            speaker.Play();
-            scoreText.text = null;
-            gameOver.text = "You Win! Game Created By Jim Elso. \nPress R to Restart!";
+            level2 = true;
         }
     }
 
@@ -179,6 +185,7 @@ public class RubyController : MonoBehaviour
 
         cogCount -= 1;
         SetCogText();
+
     }
 
     void SetCogText()

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - RubyController
   - Ammo
+  - Caught
+  - Time
+  - Powerup
+  - BG
   layers:
   - Default
   - TransparentFX
